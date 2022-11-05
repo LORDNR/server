@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express";
 
 import multer from "multer";
+import { productRouter } from "./product.route";
 const Multer = multer({
   storage: multer.memoryStorage(),
   limits: {
@@ -9,6 +10,8 @@ const Multer = multer({
 });
 
 const routes = Router();
+
+routes.use("/product", productRouter);
 
 // routes
 //   .use("/category", categoryRouter)
